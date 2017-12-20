@@ -33,6 +33,7 @@ void subserver(int from_client) {
       if (write(to_client, buffer, sizeof(buffer)) == -1) { // writes edited message to client and error handling
         printf("ERROR: %s\n", strerror(errno));
       }
+      close(to_client);
     }
   }
 }
