@@ -34,8 +34,11 @@ void subserver(int from_client) {
         printf("ERROR: %s\n", strerror(errno));
       }
       close(to_client);
+      exit(0);
     }
   }
+  else
+    return;
 }
 
 
